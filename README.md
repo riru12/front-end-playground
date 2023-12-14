@@ -1,0 +1,2 @@
+# riru's Front-end Playground
+Hi! I'm riru, and I aspire to be an excellent front-end developer. This is a repo containing files I made to practice HTML, CSS, and JavaScript. In this repo, I will be also listing important references and guides I used in creating some of the pages. My end goal is to be proficient in front-end development using only HTML, CSS, and JavaScript, without needing to rely on CSS libraries or component libraries.
