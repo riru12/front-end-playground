@@ -24,6 +24,7 @@ three ways to apply CSS styling, refer to reference 2
             border: none;
             padding: 0px;
             border-radius: 12px;
+            cursor: pointer;
         }
         .front {
             display:block;
@@ -32,15 +33,14 @@ three ways to apply CSS styling, refer to reference 2
             font-size: 1.25rem;
             padding : 12px 40px;
             border-radius: 12px;
-            cursor: pointer;
             transform: translateY(-5px);
             will-change: transform;
             transition: transform 250ms;
         }
-        .front:hover {
+        .back:hover .front {
             transform: translateY(-7px);
         }
-        .front:active {
+        .back:active .front {
             transform: translateY(0px);
         }
     </style>
@@ -57,7 +57,7 @@ three ways to apply CSS styling, refer to reference 2
         <div id="count" style="padding-top: 30px; padding-bottom: 50px; font-size:5rem; font-weight:bold; font-family:Helvetica;">
             0
         </div>
-        <div>
+        <div style="display:flex; flex-direction:row;">
             <button class="back" onclick="incrementCount()">
                 <span class="front">
                     Click Me!
