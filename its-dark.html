@@ -1,0 +1,82 @@
+<!-- 
+Coded using the following references:
+[1] https://stackoverflow.com/questions/11725631/how-can-i-make-a-div-horizontally-slide-in
+[2] https://stackoverflow.com/questions/15241915/how-to-change-css-property-using-javascript
+[3] https://stackoverflow.com/questions/71813807/how-do-i-get-css-vw-and-vh-in-js
+[4] https://www.w3schools.com/css/css_overflow.asp
+
+Notes and new-learnings:
+<body> and <p> has built-in margin, possibly more of the other HTML tags also
+javascript can change css of an html element
+-->
+
+<html>
+<title>Fun Button</title>
+<head>
+    <style>
+        .back {
+            background: #8a0e37;
+            border: none;
+            padding: 0px;
+            border-radius: 12px;
+            cursor: pointer;
+        }
+        .front {
+            display:block;
+            background: #e61247;
+            color: white;
+            font-size: 1.25rem;
+            padding : 12px 40px;
+            border-radius: 12px;
+            transform: translateY(-5px);
+            will-change: transform;
+            transition: transform 250ms;
+        }
+        .back:hover .front {
+            transform: translateY(-7px);
+            filter: brightness(110%);
+            transition: filter 400ms;
+        }
+        .back:active .front {
+            transform: translateY(0px);
+        }
+        .overlay {
+            background:black;
+            color:white;
+            height:100vh;
+            width:100vw;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            position:absolute;
+            top:100vh;
+            transition:1s ease;
+            overflow:hidden;
+
+        }
+    </style>
+    <script>
+        function slideIn() {
+            document.getElementById("dark").style.top=0;
+        }
+        function slideOut() {
+            document.getElementById("dark").style.top=window.innerHeight;
+        }
+    </script>
+</head>
+<body style="overflow:hidden; margin:0;">
+    <div style="display:flex; height:100vh; width:100vw; flex-direction:column; justify-content:center; align-items:center;">
+        <button class="back" onclick="slideIn()">
+            <span class="front">
+                Click Me!
+            </span>
+        </button>
+    </div>
+    <div id="dark" class="overlay" style="font-size:5rem; font-weight:bold; font-family:Helvetica;">
+        <div style="display:flex; flex-direction:column; align-items:center;">
+            <p>A little dark?</p>
+            <button style="border-radius:12px; color:white; background:black; padding:10px; border:none; cursor:pointer;" onclick="slideOut()">Yeah</button>
+        </div>
+    </div>
+</body>
+</html>
