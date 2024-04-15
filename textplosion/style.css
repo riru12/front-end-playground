@@ -1,0 +1,45 @@
+.container {
+    display:table;
+ }
+ 
+
+.line {
+    display:flex;
+    justify-content:space-between;
+}
+
+.text {
+    font-size:5rem; 
+    font-weight:bold; 
+    font-family:Helvetica;
+    color:white;
+    opacity:0.8;
+}
+
+.fancy:hover {
+    opacity:1;
+}   
+
+.fancy:hover .enhance1 {
+    transform: translate(-50px,10px);
+    rotate: -30deg;
+    transition: transform 250ms;
+}
+
+.fancy:hover .enhance2 {
+    transform: translate(-20px,-30px);
+    rotate: -10deg;
+    transition: transform 250ms;
+}
+
+.fancy:hover .enhance3 {
+    transform: translate(-5px,30px);
+    rotate: 5deg;
+    transition: transform 250ms;
+}
+
+.fancy:hover .enhance4 {
+    transform: translate(-20px,-40px);
+    rotate: 5deg;
+    transition: transform 250ms;
+}
